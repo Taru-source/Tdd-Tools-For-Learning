@@ -32,7 +32,7 @@ If you want to test other API, add your OpenAPI 2.0 schema and change command in
     make test-e2e
     ```
 
-    This will run the e2e tests for the frontend. The command for this is not yet defined.
+    This will run the e2e tests for the frontend. The command for this is umimplemented, but will be added soon.
 
 ## Note
 
