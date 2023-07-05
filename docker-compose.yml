@@ -1,0 +1,7 @@
+version: '3'
+services:
+  dredd:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    command: dredd openapi/default-todo-app-schema.yml ${API_ENDPOINT:-http://localhost:8080/v1/}

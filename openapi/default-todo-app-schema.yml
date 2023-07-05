@@ -1,0 +1,96 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: 'Todo API'
+  description: 'A simple Todo API'
+host: 'localhost:8080'
+basePath: '/api'
+schemes:
+  - 'http'
+consumes:
+  - 'application/json'
+produces:
+  - 'application/json'
+paths:
+  /todos:
+    get:
+      summary: 'Get all todos'
+      responses:
+        '200':
+          description: 'A list of todos'
+          schema:
+            type: 'array'
+            items:
+              $ref: '#/definitions/Todo'
+    post:
+      summary: 'Create a new todo'
+      parameters:
+        - in: 'body'
+          name: 'body'
+          required: true
+          schema:
+            $ref: '#/definitions/Todo'
+      responses:
+        '201':
+          description: 'The created todo'
+          schema:
+            $ref: '#/definitions/Todo'
+  /todos/{id}:
+    get:
+      summary: 'Get a todo by id'
+      parameters:
+        - in: 'path'
+          name: 'id'
+          required: true
+          type: 'integer'
+          x-example: 1
+      responses:
+        '200':
+          description: 'The found todo'
+          schema:
+            $ref: '#/definitions/Todo'
+    put:
+      summary: 'Update a todo'
+      parameters:
+        - in: 'path'
+          name: 'id'
+          required: true
+          type: 'integer'
+          x-example: 1
+        - in: 'body'
+          name: 'body'
+          required: true
+          schema:
+            $ref: '#/definitions/Todo'
+      responses:
+        '200':
+          description: 'The updated todo'
+          schema:
+            $ref: '#/definitions/Todo'
+    delete:
+      summary: 'Delete a todo'
+      parameters:
+        - in: 'path'
+          name: 'id'
+          required: true
+          type: 'integer'
+          x-example: 1
+      responses:
+        '204':
+          description: 'Todo deleted'
+definitions:
+  Todo:
+    type: 'object'
+    properties:
+      id:
+        type: 'integer'
+      title:
+        type: 'string'
+      description:
+        type: 'string'
+      completed:
+        type: 'boolean'
+    required:
+      - 'id'
+      - 'title'
+      - 'completed'
