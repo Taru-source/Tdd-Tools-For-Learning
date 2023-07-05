@@ -1,6 +1,7 @@
 # Integration Test Package
 
 This package provides a way to validate your Todo API against the OpenAPI schema using Dredd.
+
 If you want to test other API, add your OpenAPI 2.0 schema and change command in Makefile.
 
 ## Prerequisites
