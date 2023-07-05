@@ -1,28 +1,37 @@
-# Todo API Test with Dredd
+# Integration Test Package
 
-This package provides a Docker image for running Dredd tests against the Todo API.
-If you want to test Other API, add schema for your API and change command in docker-compose.yml to your chema path.
+This package provides a way to validate your Todo API against the OpenAPI schema using Dredd.
 
 ## Prerequisites
 
 - Docker
 - Docker Compose
+- Make
 
-## Usage
+## Getting Started
 
-1. Clone this repository.
-2. Build the Docker image with Docker Compose:
-
-    ```bash
-    docker-compose build
-    ```
-
-3. Run the Dredd tests with Docker Compose:
+1. Build the Docker image:
 
     ```bash
-    API_ENDPOINT=http://your-api-server/v1/ docker-compose up
+    make build
     ```
 
-Replace `http://your-api-server/v1/` with the URL of your API server. If you do not provide the `API_ENDPOINT` environment variable, the tests will be run against `http://localhost:8080/v1/` by default.
+2. Run the API tests:
 
-Please make sure the API server is running and accessible at the provided URL.
+    ```bash
+    make test-api url=http://api:8080/v1/
+    ```
+
+    Replace `http://api:8080/v1/` with the URL of your API server if it's different.
+
+3. Run the e2e tests:(Unmplemented)
+
+    ```bash
+    make test-e2e
+    ```
+
+    This will run the e2e tests for the frontend. The command for this is not yet defined.
+
+## Note
+
+The OpenAPI schema is located in the `openapi` directory and is named `default-todo-app-schema.yml`. If you want to use a different schema, replace this file with your own.

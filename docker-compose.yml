@@ -4,4 +4,4 @@ services:
     build: .
     volumes:
       - .:/usr/src/app
-    command: dredd openapi/default-todo-app-schema.yml ${API_ENDPOINT:-http://localhost:8080/v1/}
+    command: tail -f /dev/null
