@@ -37,3 +37,5 @@ If you want to test other API, add your OpenAPI 2.0 schema and change command in
 ## Note
 
 The OpenAPI schema is located in the `openapi` directory and is named `default-todo-app-schema.yml`. If you want to use a different schema, replace this file with your own.
+
+When running a server in a Docker container, it is necessary to specify a special DNS name to access services on the host machine from within the Docker container. Like `http://host.docker.internal:8080`.
