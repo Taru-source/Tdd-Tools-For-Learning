@@ -9,6 +9,7 @@ If you want to test other API, add your OpenAPI 2.0 schema and change command in
 - Docker
 - Docker Compose
 - Make
+- OS X
 
 ## Getting Started
 
