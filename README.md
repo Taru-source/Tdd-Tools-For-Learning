@@ -1,8 +1,6 @@
 # Tdd Tools For Learning
 
-This package provides a way to validate your Todo Application API endpoints with OpenAPI schema using Dredd.
-
-If you want to test other API, add your OpenAPI 2.0 schema and change command in Makefile.
+For a learning pattern of creating something that works to learn a new programming language, this package includes tests by Dredd against API endpoints for a typical TODO application by default.
 
 ## Prerequisites
 
@@ -25,18 +23,10 @@ If you want to test other API, add your OpenAPI 2.0 schema and change command in
     make test-api url=http://api:8080/v1/
     ```
 
-    Replace `http://api:8080/v1/` with the URL of your API server if it's different.
-
-3. Run the e2e tests:(Unmplemented)
-
-    ```bash
-    make test-e2e
-    ```
-
-    This will run the e2e tests for the frontend. The command for this is umimplemented, but will be added soon.
-
+    Replace `http://api:8080/v1/` with the URL of your endpoint if you like.
+   
 ## Note
 
-The OpenAPI schema is located in the `openapi` directory and is named `default-todo-app-schema.yml`. If you want to use a different schema, replace this file with your own.
+The default OpenAPI schema is located in the `openapi` directory and is named `default-todo-app-schema.yml`. If you want to use a different schema, replace this file with your own.
 
 When running a server in a Docker container, it is necessary to specify a special DNS name to access services on the host machine from within the Docker container. Like `http://host.docker.internal:8080`.
